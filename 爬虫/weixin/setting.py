@@ -1,0 +1,8 @@
+#超时时间
+TIMEOUT = 10
+
+#Redis数据库信息
+REDIS_HOST = '127.0.0.1'
+REDIS_PORT = '6379'
+REDIS_PASSWORD = 6222580
+REDIS_KEY = 'Weixin'
