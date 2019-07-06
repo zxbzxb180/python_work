@@ -75,8 +75,12 @@ class EastmoneyDownloaderMiddleware(object):
     def __init__(self, timeout=None, service_args=[]):
         self.logger = getLogger(__name__)
         self.timeout = timeout
-        self.browser = webdriver.Firefox(service_args=service_args)
-        self.browser.set_window_size(1400, 700)
+        # 浏览器启动设置类
+        options = webdriver.ChromeOptions()
+        # 浏览器启动配置
+        options.add_argument('disable-infobars')
+        self.browser = webdriver.Chrome(service_args=service_args, chrome_options=options)
+        self.browser.maximize_window()
         self.browser.set_page_load_timeout(self.timeout)
         self.wait = WebDriverWait(self.browser, self.timeout)
 

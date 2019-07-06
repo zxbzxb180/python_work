@@ -16,7 +16,7 @@ class AsiaSpiderSpider(scrapy.Spider):
             yield Request(url='http://quote.eastmoney.com/center/gridlist.html#global_asia',callback=self.parse,meta={'page':page},dont_filter=True)
 
     def parse(self, response):
-        asia_list = response.xpath("//div[@id='table_wrapper']/div[@id='main-table_wrapper']//table[@id='main-table']/tbody/tr")
+        asia_list = response.xpath("//div[@class='row']//table[@id='table_wrapper-table']//tbody/tr")
         for asia_item in asia_list:
             item = EastmoneyItem()
             item['number'] = asia_item.xpath(".//td[1]/text()").extract_first()
