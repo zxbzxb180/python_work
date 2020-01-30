@@ -1,0 +1,8 @@
+# coding=gbk
+name = input("ÇëÊäÈëÄúµÄĞÕÃû£º")
+
+with open('pi.txt','a') as file_object:
+	file_object.write(name)
+	
+
+	

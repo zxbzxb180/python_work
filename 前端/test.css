@@ -1,0 +1,12 @@
+div.div1{
+    width: 100px;
+    height: 100px;
+    background-color: #00aae1;
+    line-height: 100px;
+}
+div#divid{
+    width: 100px;
+    height: 100px;
+    background-color: #00aae1;
+    line-height: 100px;
+}

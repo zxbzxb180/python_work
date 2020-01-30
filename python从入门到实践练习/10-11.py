@@ -1,0 +1,6 @@
+#coding=gbk
+import json
+number = input("ÇëÊäÈëÄúÏ²»¶µÄÊı×Ö£º")
+with open('number.json','w') as n_obj:
+	json.dump(number,n_obj)
+

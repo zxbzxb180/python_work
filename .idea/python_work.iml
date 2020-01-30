@@ -2,10 +2,20 @@
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/Django/django_celery_test" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Tornado/restful_test" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Django/django_message" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Django/django_message/apps" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/爬虫/jd_spider" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/爬虫/Scrapy/scrapy_test" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/爬虫/CSDN_spider" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="Python 3.7 (python_spider)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+  <component name="PyDocumentationSettings">
+    <option name="renderExternalDocumentation" value="true" />
   </component>
   <component name="TestRunnerService">
     <option name="PROJECT_TEST_RUNNER" value="Unittests" />

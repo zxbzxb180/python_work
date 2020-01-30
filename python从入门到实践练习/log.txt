@@ -1,0 +1,5 @@
+WARNING:root:this is loggging a warning message
+WARNING:root:日志2
+WARNING:root:日志
+ERROR:root:日志
+CRITICAL:root:日志

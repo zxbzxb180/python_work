@@ -26,7 +26,7 @@ class EastmoneyPipeline(object):
         self.cursor = self.conn.cursor()
 
     def process_item(self, item, spider):
-        insert_sql = 'insert into `asia_money`(`序号`,`名称`,`最新价`,`涨跌额`,`涨跌幅`,`开盘价`,`最高价`,`最低价`,`昨收价`,`振幅`,`最新行情时间`) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)'
+        insert_sql = "insert into `asia_money`(`序号`,`名称`,`最新价`,`涨跌额`,`涨跌幅`,`开盘价`,`最高价`,`最低价`,`昨收价`,`振幅`,`最新行情时间`) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
         values = (
         item['number'], item['name'], item['latest_price'], item['amount_of_rise_and_fall'], item['rate_of_rise_and_fall'], item['today_opening_price'], item['maximum_price'], item['minimum_price'], item['yesterday_closing_price'], item['amplitude'], item['update_time'])
         value = (item['number'])
