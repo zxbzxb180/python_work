@@ -9,7 +9,7 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.chrome.options import Options
 from scrapy import Selector
 
-from 爬虫.jd_spider.models import *
+from jd_spider.models import *
 from selenium.webdriver.chrome.options import Options
 
 chrome_options = Options()

@@ -6,10 +6,9 @@
 # https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
 from scrapy import signals
-from fake_useragent import UserAgent
 
 
-class ScrapyTestSpiderMiddleware(object):
+class TemperatureScrapySpiderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,
     # scrapy acts as if the spider middleware does not modify the
     # passed objects.
@@ -57,7 +56,7 @@ class ScrapyTestSpiderMiddleware(object):
         spider.logger.info('Spider opened: %s' % spider.name)
 
 
-class ScrapyTestDownloaderMiddleware(object):
+class TemperatureScrapyDownloaderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,
     # scrapy acts as if the downloader middleware does not modify the
     # passed objects.
@@ -102,20 +101,3 @@ class ScrapyTestDownloaderMiddleware(object):
 
     def spider_opened(self, spider):
         spider.logger.info('Spider opened: %s' % spider.name)
-
-
-class RandomUserAgentMiddleware(object):
-    def process_request(self, request, spider):
-        request.headers.setdefault("User-Agent", UserAgent().random)
-
-
-# class CookiesMiddleware(object):
-#     def process_request(self, request, spider):
-#         request.cookies = {
-#             'Hm_lvt_6bcd52f51e9b3dce32bec4a3997715ac': '1580380355',
-#             'TY_SESSION_ID': 'e57e3220-355f-4514-852c-cd927d17c1d8',
-#             'Hm_lpvt_6bcd52f51e9b3dce32bec4a3997715ac': '1580380355', 'dc_tos': 'q4x1aa',
-#             'Hm_ct_6bcd52f51e9b3dce32bec4a3997715ac': '6525*1*10_6143115210-1580380352724-601465',
-#             'dc_session_id': '10_1580380352724.205589',
-#             'announcement': '%257B%2522isLogin%2522%253Afalse%252C%2522announcementUrl%2522%253A%2522https%253A%252F%252Fblog.csdn.net%252Fblogdevteam%252Farticle%252Fdetails%252F103603408%2522%252C%2522announcementCount%2522%253A0%252C%2522announcementExpire%2522%253A3600000%257D',
-#             'c-login-auto': '1', 'uuid_tt_dd': '10_6143115210-1580380352724-601465'}

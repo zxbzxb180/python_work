@@ -49,13 +49,13 @@ class CsdnSpider(scrapy.Spider):
 
             yield topic
 
-            yield Request(url=topic_url, callback=self.parse_topic)
-            yield Request(url=author_url, callback=self.parse_author)
+            yield Request(url=topic_url, callback=self.parse_topic, dont_filter=True)
+            yield Request(url=author_url, callback=self.parse_author, dont_filter=True)
 
         next_page = response.xpath("//div[@class='page_nav']/a[@class='pageliststy next_page']/@href").extract()
         if next_page:
             next_url = parse.urljoin(self.domain, next_page[0])
-            yield Request(url=next_url, callback=self.parse)
+            yield Request(url=next_url, callback=self.parse, dont_filter=True)
 
     def parse_topic(self, response):
         # 获取帖子详情及回复
@@ -101,7 +101,7 @@ class CsdnSpider(scrapy.Spider):
         next_page = response.xpath("//div[@class='page_nav']/a[@class='pageliststy next_page']/@href").extract()
         if next_page:
             next_url = parse.urljoin(self.domain, next_page[0])
-            yield Request(url=next_url, callback=self.parse_topic)
+            yield Request(url=next_url, callback=self.parse_topic, dont_filter=True)
 
     def parse_author(self, response):
         # 获取用户详情页面数据
@@ -112,6 +112,7 @@ class CsdnSpider(scrapy.Spider):
         author_info = response.xpath("//div[@class='lt_main clearfix']")
         desc_str = author_info.xpath(
             "./div[@class='description clearfix']/p[@class='description_detail']/text()").extract()
+        author['desc'] = ''
         if desc_str:
             desc = "".join(desc_str).strip()
             author['desc'] = desc
@@ -126,7 +127,7 @@ class CsdnSpider(scrapy.Spider):
         blog_url_list[0] = 'https://blog'
         blog_url = '.'.join(blog_url_list)
 
-        yield Request(url=blog_url, callback=self.parse_author_blog)
+        yield Request(url=blog_url, callback=self.parse_author_blog, dont_filter=True)
 
     def parse_author_blog(self, response):
         # 获取用户博客页面数据

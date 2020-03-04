@@ -268,7 +268,8 @@ if __name__ == '__main__':
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
     }
     urls = []
-    last_url_list = get_last_url_list(urls)
+    # last_url_list = get_last_url_list(urls)
+    last_url_list = ['https://bbs.csdn.net/forums/ios']
     for last_url in last_url_list:
         topic_list_queue.put(last_url)
 

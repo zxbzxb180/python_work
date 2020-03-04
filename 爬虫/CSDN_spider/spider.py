@@ -63,6 +63,7 @@ def get_cookie():
     cookie_dict = {}
     for item in all_cookie:
         cookie_dict[item['name']] = item['value']
+    print(cookie_dict)
     return cookie_dict
 
 

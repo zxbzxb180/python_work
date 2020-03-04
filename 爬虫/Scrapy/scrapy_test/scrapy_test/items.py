@@ -118,5 +118,5 @@ class AuthorBlogItem(scrapy.Item):
             author.answer_nums = self.get('answer_nums', 0)
             author.click_nums = self.get('click_nums', 0)
             author.rate = self.get('rate', -1)
-            author.name = self['name']
+            author.name = self.get('name', '')
             author.save()
