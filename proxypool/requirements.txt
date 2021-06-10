@@ -19,7 +19,7 @@ cssselect==1.0.3
 cycler==0.10.0
 decorator==4.4.0
 defusedxml==0.5.0
-Django==2.2
+Django==2.2.24
 entrypoints==0.3
 Flask==1.0.2
 funcparserlib==0.3.6
